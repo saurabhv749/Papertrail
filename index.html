@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Papertrail — AI invoice extraction for Windows</title>
+  <meta name="description"
+    content="Papertrail reads your PDF bills and invoices with AI and turns them into verified Excel, CSV and JSON. Runs on your Windows PC. 15-day free trial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-min" viewBox="0 0 10 10">
+      <path d="M0 5.5h10" />
+    </symbol>
+    <symbol id="i-max" viewBox="0 0 10 10">
+      <rect x=".5" y=".5" width="9" height="9" />
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 10 10">
+      <path d="M0 0l10 10M10 0L0 10" />
+    </symbol>
+    <symbol id="i-win" viewBox="0 0 24 24">
+      <path d="M3 5.5l7.5-1v7H3zM12 4.3L21 3v8.5h-9zM3 13h7.5v7L3 18.8zM12 13h9v8l-9-1.3z" fill="currentColor"
+        stroke="none" />
+    </symbol>
+  </svg>
+
+  <nav id="nav">
+    <div class="wrap nav-in">
+      <a class="logo" href="#top"><b>p.</b>papertrail</a>
+      <div class="nav-links">
+        <a href="#how">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#compare">Compare</a>
+        <a href="#pricing">Pricing</a>
+        <a class="btn btn-primary" data-download href="#">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-copy rv">
+        <div class="eyebrow">AI invoice extraction · for Windows</div>
+        <h1>Stop retyping invoices. <em>Let AI read them.</em></h1>
+        <p class="lede">Papertrail reads your PDF bills and invoices, pulls out every field, checks the math, and hands
+          you clean Excel, CSV or JSON. It runs on your own PC, with the AI model you choose.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-download href="#">
+            <svg>
+              <use href="#i-win" />
+            </svg> Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="#compare">See the time you save</a>
+        </div>
+        <div class="cta-note"><span data-trial>15</span>-day free trial · then <span data-price>₹499</span> one-time ·
+          <span data-version></span>
+        </div>
+        <div class="chips">
+          <span class="chip"><i></i>AI-powered extraction</span>
+          <span class="chip"><i></i>Math verified automatically</span>
+          <span class="chip"><i></i>PDFs stay on your machine</span>
+          <span class="chip"><i></i>No subscription</span>
+        </div>
+      </div>
+
+      <div class="hero-visual rv">
+        <figure class="win">
+          <div class="win-bar">
+            <div class="win-title"><b>p.</b>Papertrail</div>
+            <div class="win-ctrl">
+              <button class="minb" aria-label="Minimize"><svg>
+                  <use href="#i-min" />
+                </svg></button>
+              <button class="maxb" aria-label="Maximize"><svg>
+                  <use href="#i-max" />
+                </svg></button>
+              <button class="close" aria-label="Close"><svg>
+                  <use href="#i-close" />
+                </svg></button>
+            </div>
+          </div>
+          <div class="win-wrap">
+            <div class="win-body">
+              <img src="assets/shot-verified.png"
+                alt="Papertrail showing an airline tax invoice beside its extracted structured JSON, with a verification passed message">
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW -->
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">How it works</div>
+        <h2>Six steps. <em>Zero retyping.</em></h2>
+        <p class="lede">Drop in PDFs. Papertrail reads them like a person would, then double-checks like an accountant
+          would.</p>
+      </div>
+      <div class="pipe rv" id="pipe">
+        <div class="step"><span class="n">01</span>
+          <h3>Render</h3>
+          <p>Each PDF page is rendered sharp, even if it's a scan or a photo.</p>
+        </div>
+        <div class="step"><span class="ai">AI</span><span class="n">02</span>
+          <h3>Recognize</h3>
+          <p>Text is read from the page, including messy layouts and stamps.</p>
+        </div>
+        <div class="step"><span class="n">03</span>
+          <h3>Compose</h3>
+          <p>Text is arranged into readable Markdown that keeps tables intact.</p>
+        </div>
+        <div class="step"><span class="ai">AI</span><span class="n">04</span>
+          <h3>Extract</h3>
+          <p>Your chosen AI model understands the document and fills a structured invoice.</p>
+        </div>
+        <div class="step"><span class="n">05</span>
+          <h3>Verify</h3>
+          <p>Schema and arithmetic checks flag anything that doesn't add up.</p>
+        </div>
+        <div class="step"><span class="n">06</span>
+          <h3>Export</h3>
+          <p>Download Excel, CSV, JSON or Markdown. Ready for your books.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPOTLIGHTS -->
+  <section class="bg2" id="spotlight">
+    <div class="wrap">
+
+      <!-- 1 batch -->
+      <div class="spot wide">
+        <div class="spot-copy rv">
+          <span class="tag">01 · BATCH</span>
+          <h2>Drop a batch. <em>Walk away.</em></h2>
+          <p class="lede">Upload up to 20 PDFs at a time (100 MB per batch) and let Papertrail work through them page by
+            page while you get on with your day.</p>
+          <ul class="ticks">
+            <li>Drag and drop, or browse your folders</li>
+            <li>Live progress on every page it reads</li>
+            <li>Every processed file saved to a local history</li>
+          </ul>
+        </div>
+        <div class="duo">
+          <div class="rv">
+            <figure class="win">
+              <div class="win-bar">
+                <div class="win-title"><b>p.</b>Papertrail — Bills &amp; invoices</div>
+                <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                      <use href="#i-min" />
+                    </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                      <use href="#i-max" />
+                    </svg></button><button class="close" aria-label="Close"><svg>
+                      <use href="#i-close" />
+                    </svg></button></div>
+              </div>
+              <div class="win-wrap">
+                <div class="win-body"><img loading="lazy" src="assets/shot-upload.png"
+                    alt="Papertrail upload screen with a drop zone for PDF files"></div>
+              </div>
+            </figure>
+            <div class="cap">DROP YOUR PDFs</div>
+          </div>
+          <div class="rv">
+            <figure class="win">
+              <div class="win-bar">
+                <div class="win-title"><b>p.</b>Papertrail — Processing</div>
+                <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                      <use href="#i-min" />
+                    </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                      <use href="#i-max" />
+                    </svg></button><button class="close" aria-label="Close"><svg>
+                      <use href="#i-close" />
+                    </svg></button></div>
+              </div>
+              <div class="win-wrap">
+                <div class="win-body"><img loading="lazy" src="assets/shot-processing.png"
+                    alt="Papertrail processing a batch of invoices with page-by-page progress"></div>
+              </div>
+            </figure>
+            <div class="cap">WATCH IT WORK</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 AI extraction -->
+      <div class="spot flip">
+        <div class="spot-copy rv">
+          <span class="tag">02 · INTELLIGENCE</span>
+          <h2>AI that understands <em>any invoice.</em></h2>
+          <p class="lede">No templates to build. No rules per vendor. The AI model reads the document in context and
+            returns a structured invoice, whether it's a GST tax invoice, a purchase order or an airline ticket.</p>
+          <ul class="ticks">
+            <li>Invoice number and dates, seller and buyer, line items and totals</li>
+            <li>Taxes captured as name, rate and amount. GST, VAT, sales tax and more</li>
+            <li>Tax IDs such as GSTIN picked up automatically</li>
+            <li>Original PDF next to the extracted data, so review takes seconds</li>
+          </ul>
+        </div>
+        <div class="rv">
+          <figure class="win">
+            <div class="win-bar">
+              <div class="win-title"><b>p.</b>Papertrail — Invoice JSON</div>
+              <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                    <use href="#i-min" />
+                  </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                    <use href="#i-max" />
+                  </svg></button><button class="close" aria-label="Close"><svg>
+                    <use href="#i-close" />
+                  </svg></button></div>
+            </div>
+            <div class="win-wrap">
+              <div class="win-body"><img loading="lazy" src="assets/shot-json.png"
+                  alt="A purchase order PDF on the left and the structured invoice JSON extracted from it on the right">
+              </div>
+            </div>
+          </figure>
+          <div class="cap">PURCHASE ORDER → STRUCTURED DATA</div>
+        </div>
+      </div>
+
+      <!-- 3 verify -->
+      <div class="spot">
+        <div class="spot-copy rv">
+          <span class="tag">03 · TRUST</span>
+          <h2>Numbers that don't add up <em>get flagged.</em></h2>
+          <p class="lede">AI is fast, and AI can slip. So every extraction is checked against the arithmetic of the
+            invoice itself. If line items, taxes and totals disagree, Papertrail tells you exactly where.</p>
+          <ul class="ticks">
+            <li>Clear "all good" or "discrepancies found" after every file</li>
+            <li>Edit the JSON yourself, then re-verify with one click</li>
+            <li>You approve the data before it goes anywhere</li>
+          </ul>
+        </div>
+        <div class="rv">
+          <figure class="win">
+            <div class="win-bar">
+              <div class="win-title"><b>p.</b>Papertrail — Verification</div>
+              <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                    <use href="#i-min" />
+                  </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                    <use href="#i-max" />
+                  </svg></button><button class="close" aria-label="Close"><svg>
+                    <use href="#i-close" />
+                  </svg></button></div>
+            </div>
+            <div class="win-wrap">
+              <div class="win-body"><img loading="lazy" src="assets/shot-discrepancy.png"
+                  alt="Papertrail flagging a discrepancy where line items do not match the invoice subtotal"></div>
+            </div>
+          </figure>
+          <div class="cap">MISMATCH CAUGHT BEFORE IT HITS YOUR BOOKS</div>
+        </div>
+      </div>
+
+      <!-- 4 models -->
+      <div class="spot wide">
+        <div class="spot-copy rv">
+          <span class="tag">04 · YOUR MODEL, YOUR PRICE</span>
+          <h2>Pick the AI. <em>See the cost.</em></h2>
+          <p class="lede">Connect OpenRouter and choose from a catalog of models, including free ones, or point
+            Papertrail at any OpenAI-compatible endpoint. A built-in cost guide estimates what 1,000 documents will cost
+            on each model, using your own usage numbers.</p>
+          <ul class="ticks">
+            <li>Track tokens in and out, spend, and files processed</li>
+            <li>Search and compare models by price, then switch any time</li>
+            <li>Run your own vLLM server for fully private processing</li>
+          </ul>
+        </div>
+        <div class="duo">
+          <div class="rv">
+            <figure class="win">
+              <div class="win-bar">
+                <div class="win-title"><b>p.</b>Papertrail — Settings</div>
+                <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                      <use href="#i-min" />
+                    </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                      <use href="#i-max" />
+                    </svg></button><button class="close" aria-label="Close"><svg>
+                      <use href="#i-close" />
+                    </svg></button></div>
+              </div>
+              <div class="win-wrap">
+                <div class="win-body"><img loading="lazy" src="assets/shot-settings.png"
+                    alt="Papertrail settings with usage stats and a provider selector"></div>
+              </div>
+            </figure>
+            <div class="cap">USAGE AT A GLANCE</div>
+          </div>
+          <div class="rv">
+            <figure class="win">
+              <div class="win-bar">
+                <div class="win-title"><b>p.</b>Papertrail — Cost guide</div>
+                <div class="win-ctrl"><button class="minb" aria-label="Minimize"><svg>
+                      <use href="#i-min" />
+                    </svg></button><button class="maxb" aria-label="Maximize"><svg>
+                      <use href="#i-max" />
+                    </svg></button><button class="close" aria-label="Close"><svg>
+                      <use href="#i-close" />
+                    </svg></button></div>
+              </div>
+              <div class="win-wrap">
+                <div class="win-body"><img loading="lazy" src="assets/shot-costguide.png"
+                    alt="Papertrail model cost guide listing estimated cost per 1,000 documents"></div>
+              </div>
+            </figure>
+            <div class="cap">COST PER 1,000 DOCUMENTS</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Everything included</div>
+        <h2>Built for people who <em>close the books.</em></h2>
+        <p class="lede">Accountants, bookkeepers, small business owners and finance teams: less data entry, fewer typos,
+          more time for the work that needs you.</p>
+      </div>
+      <div class="grid">
+        <div class="card ai-card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z" />
+              <path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z" />
+            </svg></div>
+          <h3>AI extraction</h3>
+          <p>Understands document context to pull the right field from the right place, on layouts it has never seen.
+          </p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M4 4h16v16H4z" />
+              <path d="M8 9h8M8 13h8M8 17h5" />
+            </svg></div>
+          <h3>Template-free</h3>
+          <p>No setup per vendor. Throw in a tax invoice, a purchase order or a utility bill.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M4 7l8-4 8 4-8 4z" />
+              <path d="M4 12l8 4 8-4M4 17l8 4 8-4" />
+            </svg></div>
+          <h3>Batch processing</h3>
+          <p>Up to 20 PDFs and 100 MB per batch, with page-by-page progress.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M8 12.5l2.7 2.7L16 9.5" />
+            </svg></div>
+          <h3>Automatic verification</h3>
+          <p>Schema and arithmetic checks compare line items, taxes, charges, discounts and totals.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M5 19L19 5" />
+              <circle cx="7" cy="7" r="2.5" />
+              <circle cx="17" cy="17" r="2.5" />
+            </svg></div>
+          <h3>Any tax, any country</h3>
+          <p>Taxes are parsed as name, rate and amount: GST, CGST, SGST, IGST, VAT, sales tax.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="8" height="16" rx="1" />
+              <rect x="13" y="4" width="8" height="16" rx="1" />
+            </svg></div>
+          <h3>Side-by-side review</h3>
+          <p>Original PDF and extracted data share one screen, so checking is quick.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M4 20l4-1 11-11-3-3L5 16z" />
+              <path d="M14 7l3 3" />
+            </svg></div>
+          <h3>Editable JSON</h3>
+          <p>Fix any value, hit Verify JSON, and know your correction still balances.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M12 4v12M7 11l5 5 5-5M5 20h14" />
+            </svg></div>
+          <h3>Excel, CSV, JSON, Markdown</h3>
+          <p>Export what your workflow needs, including a combined Excel report.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <rect x="4" y="3" width="16" height="18" rx="2" />
+              <path d="M8 8h8M8 12h8M8 16h4" />
+            </svg></div>
+          <h3>Local archive</h3>
+          <p>Every processed document is kept in a history on your machine, with stats.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="6" rx="1" />
+              <rect x="3" y="14" width="18" height="6" rx="1" />
+              <path d="M7 7h.01M7 17h.01" />
+            </svg></div>
+          <h3>Bring your own model</h3>
+          <p>OpenRouter model picker, any OpenAI-compatible endpoint, or your own vLLM server.</p>
+        </div>
+        <div class="card rv">
+          <div class="ic"><svg viewBox="0 0 24 24">
+              <path d="M4 19V9M10 19V5M16 19v-7M22 19H2" />
+            </svg></div>
+          <h3>Cost transparency</h3>
+          <p>See average tokens per file, recorded spend, and per-model estimates for 1,000 documents.</p>
+        </div>
+        <div class="card soon rv"><span class="badge">COMING SOON</span>
+          <h3>Bank statements</h3>
+          <p>The same AI extraction and verification for bank statements. In development now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="bg2" id="privacy">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Privacy</div>
+        <h2>Your files stay home. <em>You decide the rest.</em></h2>
+        <p class="lede">Papertrail runs on your PC. Your PDFs are never uploaded. The text is parsed locally, and only
+          the text needed to build the structured data goes to the model you choose.</p>
+      </div>
+      <div class="priv">
+        <div class="tier rv"><span class="lvl">LEVEL 1</span>
+          <h3>Local by default</h3>
+          <p>PDFs are rendered and read on your machine. The history archive and your provider credentials stay on your
+            machine too.</p>
+        </div>
+        <div class="tier rv"><span class="lvl">LEVEL 2</span>
+          <h3>Lean on the model</h3>
+          <p>Only parsed text is sent to the model, never the whole file. OpenRouter doesn't log prompts unless you turn
+            logging on yourself.</p>
+        </div>
+        <div class="tier top rv"><span class="lvl">LEVEL 3</span>
+          <h3>100% private</h3>
+          <p>Point Papertrail at your own self-hosted vLLM server and nothing leaves your network. Not even the text.
+          </p>
+        </div>
+      </div>
+      <p class="fine rv">Logging policies belong to your chosen provider and can change. Review your provider's current
+        terms for sensitive data.</p>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section id="compare">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Papertrail vs. manual entry</div>
+        <h2>Your hours are worth <em>more than data entry.</em></h2>
+        <p class="lede">Try the numbers with your own volume. We assume you still glance over every result, because you
+          should.</p>
+      </div>
+      <div class="cmp">
+        <div class="rv">
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Manual entry</th>
+                <th class="p">Papertrail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Data capture</td>
+                <td class="m">Type every field, line by line</td>
+                <td class="p">AI fills the whole invoice</td>
+              </tr>
+              <tr>
+                <td>Math checks</td>
+                <td class="m">Calculator and good intentions</td>
+                <td class="p">Automatic, on every file</td>
+              </tr>
+              <tr>
+                <td>Typos</td>
+                <td class="m">Transposed digits slip through</td>
+                <td class="p">Mismatches flagged for review</td>
+              </tr>
+              <tr>
+                <td>Taxes</td>
+                <td class="m">Split by hand, rate by rate</td>
+                <td class="p">Name, rate and amount extracted</td>
+              </tr>
+              <tr>
+                <td>Output</td>
+                <td class="m">Copy and paste into sheets</td>
+                <td class="p">Excel, CSV, JSON, Markdown</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td class="m">Your time, every month</td>
+                <td class="p"><span data-price>₹499</span> once, plus pennies of AI usage</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="calc rv">
+          <h3>What could you get back?</h3>
+          <div class="field"><label for="c-n">Invoices per month <span id="o-n"></span></label><input id="c-n"
+              type="range" min="10" max="2000" step="10" value="200"></div>
+          <div class="field"><label for="c-m">Minutes to key one by hand <span id="o-m"></span></label><input id="c-m"
+              type="range" min="1" max="20" step="1" value="5"></div>
+          <div class="field"><label for="c-r">Minutes to review with Papertrail <span id="o-r"></span></label><input
+              id="c-r" type="range" min="0.5" max="5" step="0.5" value="1"></div>
+          <div class="field"><label for="c-h">Cost of an hour of your time <span id="o-h"></span></label><input id="c-h"
+              type="range" min="50" max="2000" step="50" value="300"></div>
+          <div class="bars">
+            <div class="bar m">MANUAL · <span id="b-m"></span>
+              <div><i id="bar-m" style="width:100%"></i></div>
+            </div>
+            <div class="bar p">WITH PAPERTRAIL · <span id="b-p"></span>
+              <div><i id="bar-p" style="width:20%"></i></div>
+            </div>
+          </div>
+          <div class="result">
+            <small>Time back every month</small>
+            <div class="big" id="r-hours">—</div>
+            <small id="r-note"></small>
+          </div>
+          <p class="fine">Illustrative estimate based on the numbers you enter. AI model usage is billed separately by
+            your provider and is typically a tiny fraction of a cent per invoice on budget models.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="bg2" id="pricing">
+    <div class="wrap">
+      <div class="sec-head rv" style="text-align:center;justify-items:center">
+        <div class="eyebrow">Pricing</div>
+        <h2>Pay once. <em>Own it.</em></h2>
+        <p class="lede">Try it free for <span data-trial>15</span> days on every new install. Keep it with a single
+          payment. No subscription, no per-document fees from us.</p>
+      </div>
+      <div class="price rv">
+        <div class="price-l">
+          <span class="tag">ONE-TIME APP FEE</span>
+          <div class="amt"><span data-price>₹499</span><small>once</small></div>
+          <a class="btn btn-primary" data-download href="#"><svg>
+              <use href="#i-win" />
+            </svg> Start free trial</a>
+          <div class="cta-note"><span data-trial>15</span> days free · no card needed to start</div>
+        </div>
+        <ul class="ticks">
+          <li>Every feature, including future updates to the Bills &amp; invoices workflow</li>
+          <li>Unlimited documents. You only pay your AI provider for what you use</li>
+          <li>You manage your own OpenRouter usage and spend</li>
+          <li>Portable installer, easy to set up</li>
+          <li>The app fee is non-refundable, so use the trial to be sure</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="eyebrow">Questions</div>
+        <h2>Good to <em>know.</em></h2>
+      </div>
+      <div class="faq rv">
+        <details>
+          <summary>Does it only work for Indian invoices?</summary>
+          <p>No. Taxes are extracted as name, rate and amount, so GST, VAT, sales tax and other schemes all fit.
+            Papertrail handles Indian GST invoices well, and it isn't limited to them.</p>
+        </details>
+        <details>
+          <summary>Are my invoices uploaded to the cloud?</summary>
+          <p>Your PDFs stay on your machine. Papertrail parses them locally and sends only the text needed to create
+            structured data to the AI model you configure. For zero external traffic, connect your own self-hosted vLLM
+            server.</p>
+        </details>
+        <details>
+          <summary>Which AI models can I use?</summary>
+          <p>Choose from the OpenRouter catalog with the built-in model picker and cost guide, use any OpenAI-compatible
+            endpoint, or run your own vLLM server.</p>
+        </details>
+        <details>
+          <summary>What if the AI gets something wrong?</summary>
+          <p>Papertrail checks the extracted data against the invoice's own arithmetic and warns you about
+            discrepancies. You can compare against the original PDF, edit the JSON and re-verify. As with any OCR or AI
+            tool, review results before relying on them.</p>
+        </details>
+        <details>
+          <summary>What happens after the 15-day trial?</summary>
+          <p>Each new install gets a 15-day trial. After that, a one-time app fee of <span data-price>₹499</span>
+            unlocks it for good. The fee is non-refundable.</p>
+        </details>
+        <details>
+          <summary>Who pays for the AI usage?</summary>
+          <p>You do, directly through your provider, and you stay in control. Papertrail shows your token usage,
+            recorded spend and per-model estimates so there are no surprises.</p>
+        </details>
+        <details>
+          <summary>Can it read bank statements?</summary>
+          <p>Not yet. Bank statement parsing is an upcoming feature.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <div class="final rv">
+        <div class="eyebrow" style="color:#a9bdb0"><span style="display:none"></span>Ready when you are</div>
+        <h2>Give your next hundred invoices <em>to the AI.</em></h2>
+        <p class="lede">Download Papertrail, drop in a few PDFs, and see the structured data for yourself.</p>
+        <a class="btn btn-primary" data-download href="#"><svg>
+            <use href="#i-win" />
+          </svg> Download for Windows</a>
+        <div class="cta-note"><span data-trial>15</span>-day free trial · <span data-price>₹499</span> one-time after
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="yr"></span> Papertrail finsoft. All rights reserved.</span>
+      <span>PDF → STRUCTURED DATA · PRIVATE BY DESIGN</span>
+    </div>
+  </footer>
+
+  <div class="lb" id="lb" role="dialog" aria-label="Screenshot preview"><img alt=""></div>
+
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>
