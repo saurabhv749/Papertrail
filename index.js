@@ -3,7 +3,8 @@ const CONFIG = {
     version: "",
     currency: "₹",
     price: 499,
-    trialDays: 15
+    trialDays: 15,
+    videoId: "-h6BeO0FRmw"
 };
 
 /* ---------- apply config ---------- */
@@ -33,6 +34,27 @@ document.querySelectorAll('[data-trial]').forEach(el => el.textContent = CONFIG.
 document.querySelectorAll('[data-version]').forEach(el => { el.textContent = CONFIG.version ? "Latest " + CONFIG.version : "Portable installer"; });
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+/* ---------- demo video (click to load, no YouTube requests until played) ---------- */
+(() => {
+    const id = (CONFIG.videoId || "").trim();
+    if (!id) return;
+    document.querySelectorAll('#demo,[data-demo]').forEach(el => el.hidden = false);
+    const btn = document.getElementById('yt');
+    const poster = q => 'https://i.ytimg.com/vi/' + id + '/' + q + '.jpg';
+    const setPoster = u => btn.style.backgroundImage = 'url(' + u + ')';
+    const probe = new Image();
+    probe.onload = () => setPoster(probe.naturalWidth > 200 ? poster('maxresdefault') : poster('hqdefault'));
+    probe.onerror = () => setPoster(poster('hqdefault'));
+    probe.src = poster('maxresdefault');
+    btn.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0&modestbranding=1';
+        f.title = 'Papertrail tutorial';
+        f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        btn.replaceWith(f);
+    });
+})();
 /* ---------- nav shadow ---------- */
 const nav = document.getElementById('nav');
 addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 10), { passive: true });
